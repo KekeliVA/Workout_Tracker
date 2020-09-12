@@ -18,6 +18,16 @@ const WorkoutSchema = new Schema({
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
+WorkoutSchema.virtual("totalDuration").get(function() {
+  let currentDurationSum = 0;
+  for (let i = 0; i < exercises.length; i++) {
+    currentDurationSum = this.exercises[i].duration + currentDurationSum
+  }
+  console.log(currentDurationSum);
+  return currentDurationSum;
+})
+
+
 module.exports = Workout;
 
 // type, name, and duration need to be required (NOT NULL)
