@@ -19,3 +19,7 @@ const WorkoutSchema = new Schema({
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
 module.exports = Workout;
+
+// type, name, and duration need to be required (NOT NULL)
+// do a trim on type and name
+// look up how to make a virtual in mongoose to be able to create total duration (creates a virtual column, takes a function to return it)
