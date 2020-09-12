@@ -28,7 +28,7 @@ WorkoutSchema.virtual("totalDuration").get(function() {
 })
 
 
-module.exports = Workout;
+module.exports = { Workout };
 
 // type, name, and duration need to be required (NOT NULL)
 // do a trim on type and name
